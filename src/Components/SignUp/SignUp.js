@@ -1,10 +1,10 @@
 import React , {useState,useEffect} from 'react';
 import {Link} from 'react-router-dom'
-import styles from './CSSFile/SignUp.module.css';
+import styles from '../CSSFile/SignUp.module.css';
 import {validate} from './Validation';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {notify} from  './helperJs/reactTostify'
+import {notify} from  '../helperJs/reactTostify'
 const SignUp = () => {
 
         const[data,setDate]=useState({
@@ -18,28 +18,19 @@ const SignUp = () => {
         const[error,setErrors] = useState({})
         const [focus,setFocus] = useState({})
         const [checkC,setCheckC]= useState(false)
-        const [valid,setValid]=useState('')
 
         useEffect(()=>{
                 setErrors(validate(data))
                
-        },[data,focus])
+        },[data])
 
-        const changeHandler = async(e) =>{
-                e.preventDefault();
+        const changeHandler = (e) =>{
                 if(e.target.name === 'isAccepted'){
                         setDate({...data,[e.target.name]:e.target.checked})
                 }
                 else{
                     setDate({...data,[e.target.name]: e.target.value})  
                 }
-           if( e.target.value.length>0){
-              setValid('slam')
-               
-           }else{
-               setValid('bye')
-                
-           }
         }
         const focusHandler = (e)=>{
                 e.preventDefault();
@@ -70,6 +61,7 @@ const SignUp = () => {
         }
       
         return (
+
                 <div className={styles.formWrapper}>
                    <form onSubmit={submitHandler}>
                            <h1>ثبت نام</h1>
@@ -85,7 +77,7 @@ const SignUp = () => {
                                    <div className={styles.fieldContent}>
                                    <input className={(error.family && focus.family) ? styles.setred:styles.setGreen} 
                                    type="text" name='family' value={data.family} onChange={changeHandler} onFocus={focusHandler} />
-                                   <label htmlFor="name">نام و نام خانوادگی </label>
+                                   <label htmlFor="name">نام خانوادگی </label>
                                    </div>
                                    {error.family && focus.family && <span>{error.family}</span>}
                            </div>
@@ -115,8 +107,10 @@ const SignUp = () => {
                            </div>
                            
                            <div className={styles.field}>
+                                   <div>
                                    <input type="checkbox" name='isAccepted' value={data.isAccepted} onChange={changeHandler} onClick={checkBoxHandler} />
                                    <label htmlFor="name">با قوانین سایت موافقم </label>
+                                   </div>
                                    {error.isAccepted && checkC && <span>{error.isAccepted}</span>}
                            </div>
                            <div className={styles.sLoWrapper}>

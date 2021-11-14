@@ -4,7 +4,9 @@
         width: 100%;
         height: 100vh;
         padding-top:4rem ;
-       
+       display: flex;
+       justify-content: center;
+       align-items: center;
  
 }
 h1{
@@ -12,12 +14,13 @@ h1{
         margin:0 0 1.5rem 0;
 }
 form{
-        max-width: 700px;
-        margin: 0 auto;
+        max-width: 600px;
+        width: 100%;
+        margin: 0 2rem;
         background-color: #fff;
         border-radius: 15px;
         background-color: #fff;
-        padding: 1rem 5rem 3rem 5rem;
+        padding: 1rem 5rem 1rem 5rem;
 }
 input{
         border: none;
@@ -38,10 +41,10 @@ input{
         width:fit-content;
         white-space: nowrap;
         font-size: 14px;
-     
         position: absolute;
         transform: translateY(-10px);
         left: 0;
+        opacity: 0.8;
 }
 .fieldContent input{
         width: 100%;
@@ -103,6 +106,7 @@ input.setred{
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        font-size: 15px;
 }
 .sLoWrapper span{
         display: flex;
@@ -151,4 +155,30 @@ input[type="checkbox"]:checked{
 }
 .field:nth-of-type(6) span{
         padding: 0 20px;
+}
+@media screen and (max-width:768px) {
+        .field:nth-of-type(6) {
+               flex-direction: column;
+               width: 100%;
+               font-size: 14px;
+               height: 45px;
+               
+        }
+        form{
+                padding: 1rem 1.5rem 1rem 1.5rem ;
+        }
+        .sLoWrapper{
+                margin-top:0;
+        }
+}
+@media screen and (max-width:576px){
+        
+        .sLoWrapper{
+                flex-direction: column;
+                font-size: 14px;
+                
+        }
+        .sLoWrapper button{
+                margin-bottom: 0.5rem;
+        }
 }

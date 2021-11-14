@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './CSSFile/Responsive.module.css';
+import styles from '../CSSFile/Responsive.module.css';
 import { FaHome ,FaUsers,FaUserPlus,FaUserCircle } from "react-icons/fa";
 const ResponsiveHeader = () => {
         return (

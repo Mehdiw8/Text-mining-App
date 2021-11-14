@@ -1,6 +1,4 @@
-.headWrapper{
-      display: none;
-}
+
 .header{
         background: rgb(2,0,36);
         background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 38%, rgba(0,212,255,1) 100%);
@@ -10,25 +8,30 @@
 }
 .headerContent{
         display:flex;
-        flex-direction: column;
+       justify-content:space-between;
+       align-items:center;
+       flex-direction: row-reverse;
+       padding: 1rem 1.5rem;
+}
+.iconmenuWrapper{
+        display:flex;
+        justify-content: center;
+        align-items:center;
 }
 .logo{
         color: #fff;
-        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
 }
-.logo div{
-        margin: 0.5rem 0 0 0 ;
-}
+
 .logo div span {
         font-size:1.4rem;
         font-weight: bold;
         margin: 1px;
 }
 .menuWrapper{
-        display: flex;
+        display: none;
         justify-content: space-between;
         margin: 0 2rem;
 }
@@ -147,9 +150,148 @@ svg{
 		transform: translate(0px, 5px);
 	}
 }
+.line{
+        display: none;
+}
+.humbergerMenu{
+       margin-left: 15px;
+}
+.humbergerMenu div{
+        height: 30px;
+}
+.signUpIcon{
+        height: 30px;
+}
+.humbergerMenu svg,
+.signUpIcon svg{
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        
+}
+
+.humbergerMenuT svg:nth-of-type(1){
+        display: none;
+}
+.humbergerMenuT svg:nth-of-type(2){
+        display: inline-block;
+        color: #8c0000;
+}
+.humbergerMenuF svg:nth-of-type(2){
+        display: none;
+}
+.signUpIconF svg:nth-of-type(2){
+        display: none;
+}
+.signUpIconT svg:nth-of-type(1){
+        display: none;
+}
+.signUpIconT svg:nth-of-type(2){
+        display: inline-block;
+        color: #8c0000;
+}
+
+/* Responsive menu List */
+.menuRContentT{
+        display: inline-block;
+}
+.menuRContentF{
+        display: none;
+}
+
+.userRContentT{
+        display: flex;
+}
+.userRContentF{
+        display: none;
+}
+.menuRContent {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+.userRContent ul{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+}
+
+.menuRContent ul li,
+.userRContent ul li{
+        padding: 1rem 0;
+        border-top: 1px solid #79949194;
+}
+.menuRContent ul li a,
+.userRContent ul li a{
+        display: flex;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+       
+        
+}
+.menuRContent ul li a svg,
+.userRContent ul li a svg{
+       margin-left: 3px;
+}
+.header a{
+        transition: all 0.3s ease-in-out;
+}
+.header a:hover{
+        color: yellow;
+}
+.menuWrapperUl2>ul li:nth-of-type(2) a:hover{
+        color: rgb(241, 124, 109);
+        
+
+}
+
+.menuWrapperUl2>ul li:nth-of-type(2) a:hover svg{
+        animation: loginAnimation 1s alternate;
+}
+@keyframes loginAnimation {
+        0%{
+                transform: translateX(0px);
+                
+        }
+        50%{
+                transform: translateX(-5px)
+        }
+        100%{
+                transform: translateX(0px) ;
+        }
+}
 
 @media screen and (min-width: 768px) {
         .headWrapper{
                 display: block;
           }
+          .line{
+                display: block;
+        }
+          .menuWrapper{
+                  display: flex;
+                  justify-content: space-between;
+                  width: 100%;
+          }
+          
+          .headerContent{
+                display:flex;
+                flex-direction: column;
+        }
+        .iconmenuWrapper{
+                display: none;
+        }
+        .menuContainer{
+                display: none;
+        }
+        .menuRContent{
+                display: none;
+        }
+        .userRContent{
+                display: none; 
+        }
+          
 }
