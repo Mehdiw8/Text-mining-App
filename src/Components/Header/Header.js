@@ -64,9 +64,9 @@ const Header = () => {
                                 <menu className={styles.menuWrapper}>
                                        <nav className={styles.menuWrapperUl1}>
                                                 <ul>
-                                                        <li><a href="/">
+                                                        <li><Link to="/Home">
                                                                  <FaHome /> 
-                                                                خانه</a>
+                                                                خانه</Link>
                                                                  </li>
                                                         <li>
                                                         <a href="/">
@@ -90,9 +90,9 @@ const Header = () => {
                                                                <FaUserPlus />
                                                                ثبت نام</Link></li>
                                                        <li>
-                                                       <a href="/">
+                                                       <Link to="/Login">
                                                                <HiOutlineLogin />
-                                                               ورود</a></li>
+                                                               ورود</Link></li>
                                                </ul>
                                        </nav>
                                 </menu>
@@ -108,9 +108,9 @@ const Header = () => {
                                                 {/* main menu RESPONSIVE */}
                                         <nav className={`${styles.menuRContent} ${humber ? styles.menuRContentT : styles.menuRContentF}`} >
                                                 <ul>
-                                                <li><a href="/">
+                                                <li><Link to="/Home">
                                                         <FaHome /> 
-                                                        خانه</a>
+                                                        خانه</Link>
                                                         </li>
                                                 <li>
                                                 <a href="/">
@@ -135,9 +135,9 @@ const Header = () => {
                                                                <FaUserPlus />
                                                                ثبت نام</Link></li>
                                                        <li>
-                                                       <a href="/">
+                                                       <Link to="/Login">
                                                                <HiOutlineLogin />
-                                                               ورود</a></li>
+                                                               ورود</Link></li>
                                                </ul>
                                         </nav>
                             </section>

@@ -4,6 +4,9 @@
         src: url(Fonts/IRANSans/IRANSans.ttf);
         src: url(Fonts/IRANSans/IRANSans.woff);
     }
+    html {
+        scroll-behavior: smooth;
+      }
 *{
         margin: 0;
         padding: 0;
@@ -11,7 +14,8 @@
         list-style: none;
         text-decoration: none;
         direction:rtl;
-        font-family:IRANSanss;
+        font-family:IRANSanss !important;
+        font-size: 14px;
 }
 a{
        color: initial;

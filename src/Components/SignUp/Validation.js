@@ -1,17 +1,6 @@
-export const validate = (data) =>{
+export const validate = (data,type) =>{
         const errors = {}
 
-        if(!data.name.trim()){
-                errors.name = "نام خود را وارد کنید"
-        }else{
-                delete errors.name
-        }
-        if(!data.family.trim()){
-                errors.family = "نام خانوادگی خود را وارد کنید"
-        }
-        else{
-                delete errors.family
-        }
         if(!data.email){
                 errors.email = "ایمیل خود را وارد کنید"
         }
@@ -28,19 +17,34 @@ export const validate = (data) =>{
         }else{
                 delete errors.password
         }
-        if(!data.confirmPassword){
-                errors.confirmPassword="رمز خود را وارد کنید"
-        }
-        else if(data.confirmPassword !== data.password){
-                errors.confirmPassword="عدم مطابقت رمز"
-        }else{
-               delete  errors.confirmPassword
-        }
-        if(data.isAccepted){
-           delete errors.isAccepted
-        }
-        else{
-                errors.isAccepted="علامت بزنید"
+  
+        if(type === 'signUp'){
+                if(!data.confirmPassword){
+                        errors.confirmPassword="رمز خود را وارد کنید"
+                }
+                else if(data.confirmPassword !== data.password){
+                        errors.confirmPassword="عدم مطابقت رمز"
+                }else{
+                       delete  errors.confirmPassword
+                }
+                if(data.isAccepted){
+                   delete errors.isAccepted
+                }
+                else{
+                        errors.isAccepted="علامت بزنید"
+                }
+                
+                if(!data.name.trim()){
+                        errors.name = "نام خود را وارد کنید"
+                }else{
+                        delete errors.name
+                }
+                if(!data.family.trim()){
+                        errors.family = "نام خانوادگی خود را وارد کنید"
+                }
+                else{
+                        delete errors.family
+                }
         }
         return errors
 }
