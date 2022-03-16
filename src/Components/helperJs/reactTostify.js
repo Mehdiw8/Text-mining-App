@@ -11,9 +11,20 @@ export const notify = (text,type) => {
                         draggable: true,
                         progress: undefined,
                         });
-        }else{
+        }else if (type === 'error'){
                 toast.error(text, {
                         position: "top-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: true,
+                        progress: undefined,
+                        });;
+        }
+        else if(type === 'info') {
+                toast.info(text, {
+                        position: "bottom-left",
                         autoClose: 5000,
                         hideProgressBar: false,
                         closeOnClick: true,

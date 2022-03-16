@@ -1,0 +1,17 @@
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGkiOiJmYTYxNDFhOS0yY2EyLWVjMTEtODBmNi05OGRlZDAwMjYxOWIiLCJleHAiOjE2NDcyNDgwMTQsImxpbWl0Q250IjoiMTAwMTAwIiwic3ViIjoiYWVlcTE4QGdtYWlsLmNvbSIsImp0aSI6ImJhNWI3MDE3LWZmZjYtNGZkZS1hNmIxLThlMzY0Zjk2Y2UxYSIsImlzcyI6Imh0dHA6Ly90ZXh0LW1pbmluZy5pci8iLCJhdWQiOiJodHRwOi8vdGV4dC1taW5pbmcuaXIvIn0.qEumvAtThL_6QJkPsowcefQUb_5PfHuFVdGT3M5HXlU");
+
+var raw = "\"اگه اون گزینه رو کلیک کنین، یه پنجره باز میشه که میتونین رمز عبورتون رو اونجا تغییر بدین\r\n داشتم مي رفتم برم، ديدم گرفت نشست، گفتم بذار بپرسم ببينم مياد نمياد ديدم ميگه نميخوام بيام بذار برم بگيرم بخوابم نمیتونم بشینم.\r\n کتابای خودتونه. نمیدونم چی بگم که دیگه اونجا نره\r\n ساعت چن میتونین بیایین؟\"";
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("https://api.text-mining.ir/api/TextRefinement/FormalConverter", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));

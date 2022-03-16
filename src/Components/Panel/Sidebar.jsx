@@ -1,8 +1,8 @@
 import React ,{useState,useEffect,useContext} from 'react';
 import {Link} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
-import {Avatar,List,Typography,ListItem,ListItemIcon,ListItemText} from '@material-ui/core'
-import {Dashboard,Person,Spellcheck,BorderColor,Announcement,InsertEmoticon} from '@material-ui/icons';
+import {Avatar,List,Typography,ListItem,ListItemIcon,ListItemText,Button} from '@material-ui/core'
+import {Dashboard,Person,Spellcheck,BorderColor,Announcement,InsertEmoticon,MeetingRoom} from '@material-ui/icons';
 import {contextL} from '../Context/Context'
 const useStyles = makeStyles((theme)=>({
               item:{
@@ -21,11 +21,11 @@ const useStyles = makeStyles((theme)=>({
                         color:'#fafafa',
                         borderRadius:'8px',
                         padding: '10px',
-                        margin: '15px',
+                        margin: '15px 15px 0 0',
                         maxWidth:"280px",
                         [theme.breakpoints.down('xs')]:{
                                 padding: '5px',
-                                margin: '7px',
+                                margin: '7px 7px 0 0',
                                          },
 
               },
@@ -71,10 +71,33 @@ const useStyles = makeStyles((theme)=>({
                       },
                       borderRadius:"5px",
                       
+              },
+              buttonpanel:{
+                      minWidth:'30px',
+                width:"100%",
+                "&:hover": {
+                        backgroundColor: '#f500578c'
+                      }
+              },
+              
+              btnWrapper:{
+                      display:'inline-block',
+                      width:"100%",
+                      
               }
-              
-              
-             
+             ,
+             btnbtn:{
+                     textAlign: 'center',
+                     marginTop:"6rem"
+             },
+             btnSpan:{
+                     "&hover" : {
+                        color:"#eee !important",
+                     },
+                     [theme.breakpoints.down('xs')]:{
+                             display:'none'
+                     }
+             }
               
 
 }));
@@ -86,6 +109,7 @@ const Sidebar = () => {
        useEffect(()=>{
                 if(linkU.endsWith('/panel')){
                         setColor(true)
+                        
                 }else{
                         setColor(false)
                 }
@@ -110,14 +134,7 @@ const Sidebar = () => {
                                                         <ListItemText primary="داشبورد"  className={classes.itemText} />
                                         </ListItem>
                                         </Link>
-                                    <Link to="/TextAnalysis">
-                                     <ListItem button onClick={() => setBtn(!btn)} className={ treu1 ?`${classes.item} ${classes.active}`: classes.item}>
-                                         <ListItemIcon className={classes.icon}>
-                                                 <Spellcheck className={classes.itemIcon} />
-                                         </ListItemIcon>
-                                                 <ListItemText primary="تحلیل متن"  className={classes.itemText} />
-                                     </ListItem>
-                                     </Link>
+                                    
                                      <Link to="/SpellCheck">
                                         <ListItem button onClick={() => setBtn(!btn)} className={treu2 ?`${classes.item} ${classes.active}`: classes.item}>
                                                 <ListItemIcon className={classes.icon}>
@@ -125,6 +142,14 @@ const Sidebar = () => {
                                                 </ListItemIcon>
                                                         <ListItemText primary="ویراستار متن"  className={classes.itemText} />
                                         </ListItem>
+                                     </Link>
+                                     <Link to="/TextAnalysis">
+                                     <ListItem button onClick={() => setBtn(!btn)} className={ treu1 ?`${classes.item} ${classes.active}`: classes.item}>
+                                         <ListItemIcon className={classes.icon}>
+                                                 <Spellcheck className={classes.itemIcon} />
+                                         </ListItemIcon>
+                                                 <ListItemText primary="تبدیل محاوره به رسمی"  className={classes.itemText} />
+                                     </ListItem>
                                      </Link>
                                      <Link to="/Typos"><ListItem button onClick={() => setBtn(!btn)} className={treu3 ?`${classes.item} ${classes.active}`: classes.item}>
                                          <ListItemIcon className={classes.icon}>
@@ -144,6 +169,19 @@ const Sidebar = () => {
                                          </ListItemIcon>
                                                  <ListItemText primary="پروفایل"  className={classes.itemText} />
                                      </ListItem></Link>
+                                    <div className={classes.btnbtn}>
+                                    <a href="/" className={classes.btnWrapper}>
+                                     <Button
+                                                variant="contained"
+                                                color="secondary"
+                                                className={classes.buttonpanel}
+                                                startIcon={<MeetingRoom />}
+                                        >
+                                                <span className={classes.btnSpan}>خروج</span>
+                                        </Button>
+                                       
+                                        </a>
+                                    </div>
                              </List>
                         </section>
                 </section>

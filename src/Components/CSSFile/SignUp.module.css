@@ -10,12 +10,12 @@
 .Toastify__toast-body > div:last-child{
         font-size: 14px;
 }
-h1{
+.h11{
         text-align:center;
         margin:0 0 1.5rem 0;
         font-size: 24px;
 }
-form{
+.forms{
         max-width: 600px;
         width: 100%;
         margin: 0 2rem;
@@ -100,7 +100,7 @@ input.setred{
         }
         100%{
                 text-shadow: 0px 0px 1px crimson;
-                transform: scale(1.0.3);
+                transform: scale(1.03);
         }
 }
 
@@ -126,7 +126,7 @@ input.setred{
 .sLoWrapper span a:hover{
         transform: scale(1.05)
 }
-button{
+.buttonSign{
         border: none;
         border-radius: 7px;
         padding:10px 32px;
@@ -137,7 +137,7 @@ button{
         border: 0.5px solid #666;
         transition: all 0.3s;
 }
-button:hover{
+.buttonSign:hover{
         
         color: rgb(0, 183, 255);
         background-color:#fff;
@@ -167,7 +167,7 @@ input[type="checkbox"]:checked{
                height: 45px;
                
         }
-        form{
+        .forms{
                 padding: 1rem 1.5rem 1rem 1.5rem ;
         }
         .sLoWrapper{

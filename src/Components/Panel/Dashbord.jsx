@@ -1,11 +1,11 @@
 import React from 'react';
-const PanelContent = () => {
-    
+
+const Dashbord = () => {
         return (
                 <div>
-                        Panel
+                        dashbord
                 </div>
         );
 };
 
-export default PanelContent;
+export default Dashbord;

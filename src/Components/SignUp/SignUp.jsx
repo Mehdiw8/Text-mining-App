@@ -6,7 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {notify} from  '../helperJs/reactTostify'
 import useTitle from '../../Customhooks/useTitle';
-const Login = () => {
+const SignUp = () => {
         useTitle('ثبت نام / ورود')
         const[data,setDate]=useState({
               name:'',
@@ -18,16 +18,17 @@ const Login = () => {
         })
         const[error,setErrors] = useState({})
         const [focus,setFocus] = useState({})
+        const [checkC,setCheckC]= useState(false)
         useEffect(()=>{
-                setErrors(validate(data))
+                setErrors(validate(data,'signUp'))
                 const scrollDown = ()=>{
                         setTimeout(() => {
-                        window.location.hash = '#ScrollHere';
+                        window.location.hash = '#ScrollHere1';
                         }, 500);
                 }
                 scrollDown()
-               
-        },[data,focus])
+                
+        },[data])
 
         const changeHandler = (e) =>{
                 if(e.target.name === 'isAccepted'){
@@ -43,6 +44,9 @@ const Login = () => {
                         ...focus,[e.target.name]:true
                 })
         }
+        const checkBoxHandler = ()=>{
+                setCheckC(true)
+        }
         const submitHandler = (e)=>{
                 e.preventDefault()
                 if(!Object.keys(error).length){
@@ -57,17 +61,33 @@ const Login = () => {
                                 password:true,
                                 confirmPassword:true,
                         })
+                        setCheckC(true)
                         notify('لطفا موارد خواسته شده را تکمیل کنید !','error')
                 }
         }
-      
+     
         return (
 
                 <div className={styles.formWrapper}>
-                        <div id="ScrollHere" name="ScrollHere"></div>
-                   <form onSubmit={submitHandler}>
-                           <h1> ورود</h1>
-                             
+                        <div id="ScrollHere1" name="ScrollHere1"></div>
+                   <form onSubmit={submitHandler} className={styles.forms}>
+                           <h1 className={styles.h11}>ثبت نام</h1>
+                           <div className={styles.field}>
+                                  <div className={styles.fieldContent}>
+                                  <input className={(error.name && focus.name) ? styles.setred:styles.setGreen} type="text" name='name' value={data.name} onChange={changeHandler} onFocus={focusHandler} />
+                                   <label htmlFor="name">نام </label>
+                                  </div>
+                                   {error.name && focus.name && <span>{error.name}</span>}
+
+                           </div>
+                           <div className={styles.field}>
+                                   <div className={styles.fieldContent}>
+                                   <input className={(error.family && focus.family) ? styles.setred:styles.setGreen} 
+                                   type="text" name='family' value={data.family} onChange={changeHandler} onFocus={focusHandler} />
+                                   <label htmlFor="name">نام خانوادگی </label>
+                                   </div>
+                                   {error.family && focus.family && <span>{error.family}</span>}
+                           </div>
                            <div className={styles.field}>
                                    <div className={styles.fieldContent}>
                                    <input className={(error.email && focus.email) ? styles.setred:styles.setGreen} 
@@ -84,20 +104,34 @@ const Login = () => {
                                    </div>
                                    {error.password && focus.password &&<span>{error.password}</span>}
                            </div>
-                       
+                           <div className={styles.field}>
+                                   <div className={styles.fieldContent}>
+                                   <input className={(error.confirmPassword && focus.confirmPassword) ? styles.setred:styles.setGreen}
+                                    type="password" name='confirmPassword' value={data.confirmPassword} onChange={changeHandler} onFocus={focusHandler} />
+                                   <label htmlFor="name">تکرار رمز </label>
+                                   </div>
+                                   {error.confirmPassword && focus.confirmPassword && <span>{error.confirmPassword}</span>}
+                           </div>
                            
-                           
+                           <div className={styles.field}>
+                                   <div>
+                                   <input type="checkbox" name='isAccepted' value={data.isAccepted} onChange={changeHandler} onClick={checkBoxHandler} />
+                                   <label htmlFor="name">با قوانین سایت موافقم </label>
+                                   </div>
+                                   {error.isAccepted && checkC && <span>{error.isAccepted}</span>}
+                           </div>
                            <div className={styles.sLoWrapper}>
-                           <button type= "submit" >ورود</button>
+                           <button className={styles.buttonSign} type= "submit" >ثبت نام</button>
                            <span>
-                                      
-                           <Link to="/SignUp">ثبت نام</Link> 
+                                    <p> قبلا ثبت نام کردی؟</p>  
+                           <Link to="/Login" >ورود</Link> 
                            </span>
                            </div>
+                           
                    </form>
-                   <ToastContainer rtl />
+                   <ToastContainer  rtl />
                 </div>
         );
 };
 
-export default Login;
+export default SignUp;
