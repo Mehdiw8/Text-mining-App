@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import axios from 'axios';
 import {TextareaAutosize, Typography,Button,Tooltip,CircularProgress,Box,Input,Checkbox } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles';
@@ -8,6 +8,8 @@ import { ToastContainer } from 'react-toastify';
 import {useStyles} from "./Panel.Style/Page.style";
 import HeadContent from './Panel Help C/HeadContent'
 import FormInput from './Panel Help C/FormInput'
+import {contextL} from '../Context/Context'
+import useTitle from '../../Customhooks/useTitle';
 const MYTooltipe = withStyles((theme) => ({
   tooltip: {
     backgroundColor: '#f2f7ff',
@@ -18,6 +20,10 @@ const MYTooltipe = withStyles((theme) => ({
 }))(Tooltip);
 
 const SpellC = () => {
+      const getApi = useContext(contextL)
+      const {apikey} = getApi
+      useTitle('ویراستار متن')
+        
         const [inputValue,setInputValue] = useState("سلم علیکم حتما آن ها الزم استکه مومن را احترام مے ڪنند. یگ پنجره ی بزگ وسبز باز میشود . !حضور تان را کرامی می داشتم")
         const [result,setResult] = useState([])
         const [textH,setTextH] = useState(false)
@@ -30,7 +36,7 @@ const SpellC = () => {
         const clickHandler = ()=>{
                 if(inputValue.length>0){
                         setTextH(true)
-                        axios.get(baseUrl+'Token/GetToken?apikey=fa6141a9-2ca2-ec11-80f6-98ded002619b')
+                        axios.get(baseUrl+`Token/GetToken?apikey=${apikey}`)
                         
                         .then((response) =>{
                          

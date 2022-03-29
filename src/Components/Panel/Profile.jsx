@@ -2,7 +2,9 @@ import React,{useState} from 'react';
 import styles from '../CSSFile/Profilepanel.module.css';
 import ChangePass from './profile/ChangePass'
 import Changeprofile from './profile/Changeprofile'
+import useTitle from '../../Customhooks/useTitle';
 const Profile = () => {
+        useTitle('پروفایل')
         const [active,setActive]=useState(false)
         return (
                 <section className={styles.profileWrapper}>

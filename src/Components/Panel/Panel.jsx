@@ -1,10 +1,11 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {Grid} from "@material-ui/core"
 import PanelContent from './PanelContent'
 import Sidebar from './Sidebar'
 import { makeStyles } from '@material-ui/core/styles';
 import { HiOutlineMenu ,HiOutlineX} from "react-icons/hi";
 import styles from '../CSSFile/Header.module.css';
+import useTitle from '../../Customhooks/useTitle';
 const useStyles = makeStyles((theme)=>({
 
         // hide:{
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme)=>({
 
 }));
 const Panel = () => {
+        useTitle('داشبورد')
         const classes = useStyles()
         const[humber,setHumber]=useState(false)
         return (

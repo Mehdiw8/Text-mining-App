@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import axios from 'axios';
 import {TextareaAutosize,Button,Box,CircularProgress} from '@material-ui/core'
 import {Publish,Delete} from '@material-ui/icons';
@@ -6,9 +6,12 @@ import {notify} from  '../helperJs/reactTostify'
 import { ToastContainer } from 'react-toastify';
 import {useStyles} from "./Panel.Style/Page.style";
 import HeadContent from './Panel Help C/HeadContent.jsx'
-
+import {contextL} from '../Context/Context'
+import useTitle from '../../Customhooks/useTitle';
 const TextAnalysis = () => {
- 
+        const getApi = useContext(contextL)
+        const {apikey} = getApi
+        useTitle('تبدیل محاوره به رسمی')
         const [inputValue,setInputValue] = useState(" داشتم مي رفتم برم، ديدم گرفت نشست، گفتم بذار بپرسم ببينم مياد نمياد ديدم ميگه نميخوام بيام بذار برم بگيرم بخوابم نمیتونم بشینم. ساعت چن میتونین بیاین")
         const [result,setResult] = useState('')
         const [textH,setTextH] = useState(false)
@@ -17,7 +20,7 @@ const TextAnalysis = () => {
         const clickHandler = ()=>{
                 if(inputValue.length>0){
                         setTextH(true)
-                        axios.get(baseUrl+'Token/GetToken?apikey=fa6141a9-2ca2-ec11-80f6-98ded002619b')
+                        axios.get(baseUrl+`Token/GetToken?apikey=${apikey}`)
                         
                         .then((response) =>{
                         

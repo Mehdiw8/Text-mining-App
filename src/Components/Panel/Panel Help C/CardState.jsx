@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../../CSSFile/CardState.module.css'
 const CardState = ({h6,p1,p2,icon,iconH,color}) => {
-        console.log(color);
         return (
                 <section className={styles.cardWrapper}>
                         <div className={styles.CardContent}>

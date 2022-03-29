@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 import axios from 'axios';
 import {TextareaAutosize, Box,Button,Input,CircularProgress} from '@material-ui/core'
 import {Publish,Delete} from '@material-ui/icons';
@@ -7,17 +7,22 @@ import { ToastContainer } from 'react-toastify';
 import {useStyles} from "./Panel.Style/Page.style";
 import HeadContent from './Panel Help C/HeadContent';
 import FormInput from './Panel Help C/FormInput'
+import {contextL} from '../Context/Context'
+import useTitle from '../../Customhooks/useTitle';
 const Typos = () => {
+        const getApi = useContext(contextL)
+        const {apikey} = getApi
         const [inputValue,setInputValue] = useState('فهوه با مبات میجسبد')
         const [result,setResult] = useState('')
         const [wrongNum,setWrongNum] = useState(3)
         const [textH,setTextH] = useState(false)
         const [erorr,setErorr] = useState(false)
+        useTitle('اصلاح اشتباه تایپی')
         let baseUrl = "http://api.text-mining.ir/api/"
         const clickHandler = ()=>{
                 if(inputValue.length>0){
                         setTextH(true)
-                        axios.get(baseUrl+'Token/GetToken?apikey=fa6141a9-2ca2-ec11-80f6-98ded002619b')
+                        axios.get(baseUrl+`Token/GetToken?apikey=${apikey}`)
                         
                         .then((response) =>{
                          

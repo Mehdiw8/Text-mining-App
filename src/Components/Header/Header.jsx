@@ -3,11 +3,11 @@ import styles from '../CSSFile/Header.module.css';
 import { FaHome ,FaUsers,FaUserPlus ,FaUserTimes,FaUserCircle} from "react-icons/fa";
 import { MdOutlinePhonelinkRing ,MdQuiz } from "react-icons/md";
 import { HiOutlineLogin , HiOutlineMenu ,HiOutlineX} from "react-icons/hi";
-import {Link} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom"
 const Header = () => {
         const[humber,setHumber]=useState(false)
         const[user,setUser] = useState(false)
-       
+        const navi = useNavigate()
        
                 
         return (
@@ -16,20 +16,20 @@ const Header = () => {
                              <section className={styles.headerContent}>
 
                                      
-                                 <section className={styles.logo}>
+                                 <section className={styles.logo} onClick={()=>{navi('/')}}>
                                         <div>
-                                               <span>S</span>
-                                               <span>p</span>
-                                               <span>e</span>
-                                               <span>l</span>
-                                               <span>l</span>
-                                               <span>C</span>
-                                               <span>h</span>
-                                               <span>e</span>
-                                               <span>c</span>
-                                               <span>k</span>
-                                               <span>e</span>
-                                               <span>r</span>
+                                               <span>ی</span>
+                                               <span>س‍</span>
+                                               <span>ر</span>
+                                               <span>ا</span>
+                                               <span>ف‍</span>
+                                               <span>ی</span>
+                                               <span>و</span>
+                                               <span>ا</span>
+                                               <span>ک‍</span>
+                                               <span>ن</span>
+                                               <span>ت‍‍</span>
+                                               <span>م‍</span>
 
                                         </div>
                                 </section>

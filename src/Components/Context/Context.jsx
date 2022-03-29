@@ -70,7 +70,7 @@ const Context = (props) => {
 
 
         return (
-                <contextL.Provider value={{treu,treu1,treu2,treu3,treu4,treu5,btn,setBtn}}>
+                <contextL.Provider value={{treu,treu1,treu2,treu3,treu4,treu5,btn,setBtn,apikey:"e2bf6806-58af-ec11-80f6-98ded002619b" }} >
                         {props.children}
                 </contextL.Provider>
         );
