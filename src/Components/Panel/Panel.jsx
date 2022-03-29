@@ -7,18 +7,18 @@ import { HiOutlineMenu ,HiOutlineX} from "react-icons/hi";
 import styles from '../CSSFile/Header.module.css';
 const useStyles = makeStyles((theme)=>({
 
-        hide:{
-                marginRight: "-33%",
-                transition: "1s ease-in-out  ", 
-        },
-        show:{
+        // hide:{
+        //         marginRight: "-33%",
+        //         transition: "1s ease-in-out  ", 
+        // },
+        // show:{
                
-        },
-        panelContentWrapper:{
-                display: 'flex',
-                justifyContent: 'center',
+        // },
+        // panelContentWrapper:{
+        //         display: 'flex',
+        //         justifyContent: 'center',
                
-        }
+        // }
 
 }));
 const Panel = () => {
@@ -32,7 +32,7 @@ const Panel = () => {
                         </Grid>
                         <Grid item xs={humber? 12 : 9} sm={ humber ? 12 :8}>
                        <section className={classes.panelContentWrapper}>
-                                <div className={styles.humbergerMenu}>
+                                {/* <div className={styles.humbergerMenu}>
                                                         <div className={humber ? styles.humbergerMenuT :styles.humbergerMenuF} onClick={()=>{
                                                                 setHumber((prevHumber) => !prevHumber)
                                                                 
@@ -40,7 +40,7 @@ const Panel = () => {
                                                         <HiOutlineMenu />
                                                                 <HiOutlineX />
                                                         </div>
-                                                        </div>
+                                                        </div> */}
                                         <PanelContent />
                        </section>
                         </Grid>

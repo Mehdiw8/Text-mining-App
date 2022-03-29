@@ -1,0 +1,43 @@
+.card{
+        background-color: #fff;
+        border-radius:7px;
+        margin: 0  0 0 7px;
+        padding: 7px;
+        box-shadow: 0 0 10px rgb(17 17 26 / 10%);
+}
+.avatarWrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.nameAVatar{
+        text-align: center;
+}
+.nameAVatar h5{
+        font-weight: bold;
+        font-size:16px;
+}
+.nameAVatar p{
+        font-size:12px
+}
+.minicard{
+        background: #e9eefd;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction: column;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        padding: 20px 0;
+        margin: 33px 0px;
+        color: rgb(101, 98, 104);
+        font-weight: bold;
+        text-align: center;
+
+      
+}
+
+

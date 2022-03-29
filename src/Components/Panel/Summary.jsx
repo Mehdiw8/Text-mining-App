@@ -79,7 +79,7 @@ const Summary = () => {
                        <section className={classes.container}>
                          <div className={classes.contentWrapper}>
                                  <HeadContent 
-                                         headText="دموی ابزار تبدیل محاوره به رسمی" 
+                                         headText="ابزار تبدیل محاوره به رسمی" 
                                          dis="این ابزار در پیش‌پردازش متن‌ها کاربرد دارد و بر اساس لیست کلمات موجود می‌تواند متن محاوره (عامیانه) را به رسمی تبدیل کند.."
                                  />
                                  <form className={classes.formWrapper}>

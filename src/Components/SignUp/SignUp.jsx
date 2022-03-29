@@ -1,5 +1,5 @@
 import React , {useState,useEffect} from 'react';
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import styles from '../CSSFile/SignUp.module.css';
 import {validate} from './Validation';
 import { ToastContainer } from 'react-toastify';
@@ -19,6 +19,8 @@ const SignUp = () => {
         const[error,setErrors] = useState({})
         const [focus,setFocus] = useState({})
         const [checkC,setCheckC]= useState(false)
+        const navi = useNavigate()
+        const [goNextPage ,setgoNextPage] = useState(false)
         useEffect(()=>{
                 setErrors(validate(data,'signUp'))
                 const scrollDown = ()=>{
@@ -51,9 +53,15 @@ const SignUp = () => {
                 e.preventDefault()
                 if(!Object.keys(error).length){
                         notify('درخواست شما با موفقیت انجام شد','success')
+                        setTimeout(() => {
+                                navi("/Login")
+                        }, 200);
                 }
              
                 else{
+                       
+                                
+                       
                         setFocus({
                                 name:true,
                                 family:true,
@@ -65,7 +73,7 @@ const SignUp = () => {
                         notify('لطفا موارد خواسته شده را تکمیل کنید !','error')
                 }
         }
-     
+ 
         return (
 
                 <div className={styles.formWrapper}>
@@ -121,7 +129,7 @@ const SignUp = () => {
                                    {error.isAccepted && checkC && <span>{error.isAccepted}</span>}
                            </div>
                            <div className={styles.sLoWrapper}>
-                           <button className={styles.buttonSign} type= "submit" >ثبت نام</button>
+                           <button className={styles.buttonSign}  type= "submit" >ثبت نام</button>
                            <span>
                                     <p> قبلا ثبت نام کردی؟</p>  
                            <Link to="/Login" >ورود</Link> 

@@ -119,9 +119,11 @@ const SpellC = () => {
         }
         const checkedHandler = (e)=>{
                 setChecked(e.target.checked)
+               
         }
         const checkedHandlerOne = (e)=>{
                 setCheckedOne(e.target.checked)
+               
         }
         const checkedHandlerTwo = (e)=>{
                 setCheckedTwo(e.target.checked)
@@ -161,7 +163,7 @@ return (
                         <label htmlFor="checkBox">استانداردسازی یونیکدهای مختلف حرکت‌گذاری (اعراب، تنوین، ساکن، تشدید و ...) :</label>
                         <Checkbox
                                 color="primary"
-                                checked={checkedOne}
+                                checked={checkedTwo}
                                 onChange={checkedHandlerTwo}
                                 inputProps={{ 'aria-label': 'primary checkbox' }}
                         />

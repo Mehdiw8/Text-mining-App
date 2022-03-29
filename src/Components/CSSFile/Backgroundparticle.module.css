@@ -1,0 +1,86 @@
+.fsecContent{
+        position: absolute;
+        top: 30px;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+        width: 100%;
+}
+.fsecContent>h3{
+        font-size:44px;
+        font-weight:bold;
+        margin-bottom: 30px;
+        
+
+}
+.sabtWrapper{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-direction: column;
+}
+.sabtWrapper p{
+        font-size: 24px;
+        margin:10px 0 ; 
+
+}
+.btnWrpper button{
+        background: rgb(226,247,255);
+        background: linear-gradient(90deg, rgba(226,247,255,0.404096672848827) 40%, rgb(155, 192, 252) 61%, rgb(104, 181, 245) 100%);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 16px;
+       
+}
+.btnWrpper button:hover{
+        transition: all 0.4s ease-in-out alternate;
+        background: rgb(226,247,255);
+        background: linear-gradient(90deg, rgba(186, 190, 214, 0.404) 40%, rgb(101, 113, 167) 61%, rgb(50, 94, 129) 100%);
+       transform: translateY(3px)
+}
+.btnWrpper{
+        text-align: center;
+}
+.imgWrapper{
+        width: 100%;
+        position: absolute;
+        display: flex;
+        bottom: 7px;
+        justify-content: space-evenly;
+        
+}
+.imgWrapper img {
+        height: 250px;
+        width: 40%;
+        max-width: 350px;
+        border-radius: 15px 15px 0 0;
+        box-shadow: 1px -1px  0 #aaa ;
+        animation: imgA 1s ease-in-out alternate forwards;
+}
+.firstSecWrapper{
+        position: relative;
+}
+.btnWrpper a{
+        color: #fff;
+}
+@keyframes imgA {
+        0%{
+                opacity: 0;
+                transform: translateY(50px)
+        }
+        100%{
+                opacity: 1;
+                transform: translateY(0px)
+        }
+        
+}
+@media screen and (max-width: 600px){
+        
+    .imgWrapper{
+            display: none;
+    }    
+}

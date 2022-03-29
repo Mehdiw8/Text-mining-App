@@ -1,0 +1,55 @@
+.changepass {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	padding: 22px 5px;
+}
+.changepass h3 {
+	color: #757171;
+}
+
+.changepass-form {
+	margin-top: 42px;
+	line-height: 3rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.changepass-form input {
+	outline: none;
+	background: #ffffff;
+	border: 3px solid #00b8d4;
+	box-sizing: border-box;
+	border-radius: 12px;
+	font-size: 15px;
+	margin-bottom: 10px;
+	width: 100%;
+	max-width: 334px;
+	padding: 8px 10px;
+	margin-bottom: 25px;
+}
+.changepass-form input::placeholder {
+	color: #c4c4c4;
+	font-weight: bold;
+}
+.changepass button {
+	background: #00b8d4;
+	border: 3px solid #00b8d4;
+	box-sizing: border-box;
+	border-radius: 12px;
+	padding: 6px 0;
+	color: #fff;
+	font-size: 1em;
+	cursor: pointer;
+	width: 100%;
+	font-family: vazirL;
+	margin: 10px auto;
+	max-width: 334px;
+	transition: all 0.3s;
+}
+.changepass button:hover {
+	background: #04799c;
+	border: 3px solid #04799c;
+}

@@ -77,7 +77,7 @@ const Typos = () => {
                        <section className={classes.container}>
                          <div className={classes.contentWrapper}>
                                  <HeadContent
-                                 headText='دموی ابزار اصلاح اشتباهات تایپی'
+                                 headText='ابزار اصلاح اشتباهات تایپی'
                                  dis='این ابزار در پیش‌پردازش متن‌ها کاربرد دارد و بر اساس لیست کلمات موجود می‌تواند اشتباهات تایپی را اصلاح کند.'
                                   />
                                 

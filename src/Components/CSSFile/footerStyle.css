@@ -1,0 +1,134 @@
+
+.footer-News{
+    color:#fff;
+    background-color: #515151;
+   
+}
+
+.footer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.quick-access {
+    width:100%;
+    background:#575757;
+    border-bottom: 1px solid #444;
+}
+.quick-access h3{
+    color:rgb(255, 255, 132);
+    font-weight: 300;
+    text-align: center;
+    padding-top: 14px;
+}
+.quick-access .news{
+    display: flex;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+}
+.quick-access .news li{
+    margin-left: 3%;
+    padding-right: 2%;
+}
+.quick-access .news li a{
+    text-decoration: none;
+    color:#fff;
+    font-size: 18px;
+    transition:all 0.3s;
+}
+.quick-access .news li a:hover{
+    color: #919090;
+}
+
+.social{
+    width: 100%;
+    text-align: center;
+
+}
+.social-wrapper{
+    width: 18%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 16px 0 3px 0;
+    border:none ;
+}
+
+.social-wrapper .social a{
+    color: #fff;
+    font-size: 20px;
+}
+
+.news-line{
+    line-height:2.7rem;
+    font-size:14px;
+    padding: 10px 0 3px 0;
+}
+.news-line a{
+    text-decoration: none;
+        color: #fff;
+}
+.social-wrapper .social a svg{
+    border-radius: 50%;
+    padding: 6px 6px 3px 6px;
+    height: 33px;
+    width: 37px;
+    text-align: center;
+    transition:all 0.4s;
+}
+.social-wrapper .social a svg:hover{
+    background: rgb(57, 57, 243);
+}
+.copy-right{
+    border-top: 1px solid rgba(102, 102, 102, 0.548);
+    width: 100%;
+    background-color: #3f3f3f;
+    text-align: center;
+}
+.news-line-1{
+    line-height: 2.5rem;
+}
+.news-line-1 a{
+    border-left:1px solid red;
+    padding: 0 7px;
+    cursor: pointer;
+    font-size:16px;
+    text-decoration: none;
+    color: #fff;
+}
+.news-line-1 a:first-child{
+    border-right:1px solid red;
+}
+
+@media screen and (max-width:576px){
+    
+    .quick-access .news{
+        display: flex;
+        flex-wrap: wrap;
+        padding:40px;
+        align-items: center;
+        justify-content:center;
+        white-space: nowrap;
+    }
+    .quick-access .news li{
+        width: 30%;
+        padding: 20px;
+    }
+    .line-hidden{
+        display: none;
+    }
+    .line-visibile{
+        display: flex;
+        flex-wrap: wrap;
+        padding-right:19px;
+    }
+    .news-line a {
+        width: 33%;
+    }
+    .news-line-1{
+        margin-right: 0;
+    }
+
+}

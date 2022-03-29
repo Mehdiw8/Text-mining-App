@@ -1,0 +1,78 @@
+.user-edit-informations,
+.changepass {
+	border-radius: 15px;
+	max-width: 791px;
+	width: 100%;
+	margin-bottom: 30px;
+	padding: 1rem;
+}
+.user-edit-informations h3 {
+	margin-bottom: 1rem;
+}
+
+.user-edit-informations-content {
+	display: flex;
+	flex-direction: column;
+}
+.user-edit-informations-content fieldset {
+	outline: none;
+	background: #ffffff;
+	border: 3px solid #00b8d4;
+	box-sizing: border-box;
+	border-radius: 12px;
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+.user-edit-informations-content fieldset legend {
+	margin: 0 20px;
+}
+.user-edit-informations-content fieldset span {
+	margin: 0 7px;
+}
+.user-edit-informations-content fieldset input {
+	width: 100%;
+	border: none;
+	outline: none;
+	border-radius: 15px;
+	padding: 0 10px 7px 0;
+}
+.user-edit-informations button {
+	background: #00b8d4;
+	border: 3px solid #00b8d4;
+	box-sizing: border-box;
+	border-radius: 12px;
+	padding: 6px 0;
+	color: #fff;
+	font-size: 1em;
+	cursor: pointer;
+	width: 100%;
+	font-family: vazirL;
+	margin: 10px 0;
+	transition: all 0.3s;
+}
+.user-edit-informations button:hover {
+	background: #04799c;
+	border: 3px solid #04799c;
+}
+.parent-all-parent-edit {
+	width: 80%;
+}
+.gender-select #sel-gender {
+	border: none;
+	font-family: vazirL;
+	font-size: 1em;
+	outline: none;
+	padding-right: 10px;
+	font-weight: bold;
+	margin: 0 5px;
+	color: #757171;
+}
+.user-edit-informations>h3{
+	color: #757171;
+	font-size:16px;
+}
+@media screen and (max-width: 600px) {
+	.parent-all-parent-edit {
+		width: 100%;
+	}
+}

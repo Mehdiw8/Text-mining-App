@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Avatar,List,Typography,ListItem,ListItemIcon,ListItemText,Button} from '@material-ui/core'
 import {Dashboard,Person,Spellcheck,BorderColor,Announcement,InsertEmoticon,MeetingRoom} from '@material-ui/icons';
 import {contextL} from '../Context/Context'
+import aavatar from '../../Assets/imeges/Screenshot_2.jpg';
 const useStyles = makeStyles((theme)=>({
               item:{
                       display: 'flex',
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme)=>({
                         color:'#fafafa',
                         borderRadius:'0 0 0 8px',
                         padding: '10px 0px',
-                        position: 'fixed',
+                        // position: 'fixed',
                         // margin: '15px 15px 0 0',
                         maxWidth:"280px",
                         display: 'flex',
@@ -135,7 +136,7 @@ const Sidebar = () => {
                         <section className={`${classes.sidebarWrapper}`}>
                                 <section>
                                         <section className={classes.sideHead}>
-                                                <Avatar alt="Remy Sharp" className={classes.small} src="https://img.freepik.com/free-photo/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-talk-with-interlocutor-stands-against-white-wall-self-confident-man-freelancer_273609-16320.jpg?t=st=1645434707~exp=1645435307~hmac=cfb6d84875148bd13124446a35daddbb73704cfdf717edbd37672cd391b1d177&w=996" />
+                                                <Avatar alt="Remy Sharp" className={classes.small} src={aavatar} />
                                                 <Typography variant="h5" className={classes.sideHeadSize} >aeeq18@gmail.com</Typography>   
                                         </section>
                                         <section className={classes.line}></section>

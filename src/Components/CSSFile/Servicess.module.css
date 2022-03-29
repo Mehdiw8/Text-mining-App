@@ -1,0 +1,41 @@
+.servicesWrapper{
+        margin-bottom:2rem;
+}
+.servicesWrapper>h1{
+        text-align: center;
+        font-size: 38px;
+        margin:20px 0 30px 0;
+        color: #444;
+        text-shadow: -1px 2px 3px #ccc;
+}
+.service{
+        display: flex;
+        justify-content:space-evenly;
+        align-items: flex-start;
+        flex-wrap: wrap;
+}
+.service>div{
+        width: 48%;
+        max-width:350px;
+        margin: 0  0 20px 0;
+      box-shadow: 0 0 1px rgb(0 0 0 / 50%);
+        background-color:#fff;
+        border-radius: 12px;
+        padding:20px 25px 0 25px;
+        min-height:450px;
+}
+.service>div>h3{
+        color: #444;
+        font-size: 18px;
+        margin-bottom: 7px;
+}
+.service>div>p{
+        line-height:1.75rem;
+        text-align:justify;
+}
+@media screen and (max-width:600px){
+        .service>div{
+                width:80%;
+                max-width:initial;
+        } 
+}

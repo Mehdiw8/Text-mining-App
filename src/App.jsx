@@ -2,7 +2,7 @@ import React,{useState}  from 'react';
 import Header from './Components/Header/Header'
 import SignUp from './Components/SignUp/SignUp';
 import Login from './Components/SignUp/Login';
-import NavH from './Components/MainBody/NavH';
+import NavH from './Components/MainPage/NavH';
 import {Route,Routes} from 'react-router-dom';
 import Panel from './Components/Panel/Panel'
 import Context from './Components/Context/Context'
