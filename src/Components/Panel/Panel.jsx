@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme)=>({
 
 }));
 const Panel = () => {
+       
+       const userLSd = JSON.parse(localStorage.getItem('userDetail'))
+        console.log(userLSd)
         useTitle('داشبورد')
         const classes = useStyles()
         const[humber,setHumber]=useState(false)
@@ -30,7 +33,7 @@ const Panel = () => {
                 <section className={classes.panelWrapper}>
                 <Grid container className={classes.panel} >
                         <Grid className={humber? classes.hide : classes.show} item xs={3} sm={4}>
-                                <Sidebar/>
+                                <Sidebar userLSd={userLSd} />
                         </Grid>
                         <Grid item xs={humber? 12 : 9} sm={ humber ? 12 :8}>
                        <section className={classes.panelContentWrapper}>
@@ -43,7 +46,7 @@ const Panel = () => {
                                                                 <HiOutlineX />
                                                         </div>
                                                         </div> */}
-                                        <PanelContent />
+                                        <PanelContent userLSd={userLSd} />
                        </section>
                         </Grid>
                         

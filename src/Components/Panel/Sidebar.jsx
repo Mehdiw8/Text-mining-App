@@ -116,11 +116,12 @@ const useStyles = makeStyles((theme)=>({
            
 
 }));
-const Sidebar = () => {
+const Sidebar = ({userLSd}) => {
         const urls = useContext(contextL) 
         const [color,setColor] = useState(false)
         const linkU = window.location.href   
         const {treu,treu1,treu2,treu3,treu4,treu5,btn,setBtn} =urls
+      
        useEffect(()=>{
                 if(linkU.endsWith('/panel')){
                         setColor(true)
@@ -137,7 +138,7 @@ const Sidebar = () => {
                                 <section>
                                         <section className={classes.sideHead}>
                                                 <Avatar alt="Remy Sharp" className={classes.small} src={aavatar} />
-                                                <Typography variant="h5" className={classes.sideHeadSize} >aeeq18@gmail.com</Typography>   
+                                                <Typography variant="h5" className={classes.sideHeadSize} > {userLSd.email} </Typography>   
                                         </section>
                                         <section className={classes.line}></section>
                                         <section className={classes.dashbord}>

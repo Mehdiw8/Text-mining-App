@@ -1,41 +1,40 @@
-import React , {useState,useEffect} from 'react';
-import {Link} from 'react-router-dom'
+import React , {useState,useEffect,useContext} from 'react';
+import {Link,useNavigate} from 'react-router-dom'
 import styles from '../CSSFile/SignUp.module.css';
 import {validate} from './Validation';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {notify} from  '../helperJs/reactTostify'
 import useTitle from '../../Customhooks/useTitle';
+import { dataContext } from '../Context/DataContextLS'
 const Login = () => {
         useTitle('ثبت نام / ورود')
+        const navi =useNavigate()
+        const dataFromLS = useContext(dataContext)
+        const {emails,userDetails} = dataFromLS
+        const [userD,setuserD] = useState()
         const[data,setDate]=useState({
-              name:'',
-              family:'',
               email:'',
               password:'',
-              confirmPassword:'',
-              isAccepted:false,  
         })
         const[error,setErrors] = useState({})
         const [focus,setFocus] = useState({})
         useEffect(()=>{
+              
                 setErrors(validate(data))
                 const scrollDown = ()=>{
                         setTimeout(() => {
                         window.location.hash = '#ScrollHere';
+                        
                         }, 500);
                 }
                 scrollDown()
+                
                
         },[data,focus])
 
         const changeHandler = (e) =>{
-                if(e.target.name === 'isAccepted'){
-                        setDate({...data,[e.target.name]:e.target.checked})
-                }
-                else{
                     setDate({...data,[e.target.name]: e.target.value})  
-                }
         }
         const focusHandler = (e)=>{
                 e.preventDefault();
@@ -45,17 +44,30 @@ const Login = () => {
         }
         const submitHandler = (e)=>{
                 e.preventDefault()
+               
                 if(!Object.keys(error).length){
-                        notify('درخواست شما با موفقیت انجام شد','success')
+                       if(userDetails !== null){
+                        console.log(userDetails);
+                        userDetails.map((userDetail) => {
+                                if(data.email === userDetail.email && data.password === userDetail.password){
+                                        console.log(userDetail)
+                                        setuserD(userDetail)
+                                      //  localStorage.setItem('userdetail',JSON.stringify(userDetail))
+                                      localStorage.setItem('userDetail', JSON.stringify(userDetail));
+                                        notify('در حال ورود به پنل','success')   
+                                        navi('/panel')
+                                }
+                               
+                        })
+                       }
+                        notify('ایمیل یا پسوردت رو اشتباه وارد کردی','info')   
+                       
                 }
              
                 else{
                         setFocus({
-                                name:true,
-                                family:true,
                                 email:true,
                                 password:true,
-                                confirmPassword:true,
                         })
                         notify('لطفا موارد خواسته شده را تکمیل کنید !','error')
                 }

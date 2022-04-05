@@ -26,6 +26,9 @@ export const useStyles = makeStyles((theme)=>({
           
           
   },
+  responseText:{
+        lineHeight:'2rem'
+  },
   texxt:{
           fontSize:'16px',
           margin:'0 0 8px 0 '

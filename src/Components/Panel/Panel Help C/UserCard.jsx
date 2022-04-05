@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme)=>({
    
 
 }));
-const UserCard = () => {
+const UserCard = ({userLSd}) => {
         const classes = useStyles()
         return (
                 <section className={styles.card}>
@@ -20,7 +20,7 @@ const UserCard = () => {
                                  <Avatar alt="Remy Sharp" className={classes.small} src={aavatar} />
                         </div>
                         <div className={styles.nameAVatar}>
-                                <h5>مهدی میرزایی</h5>
+                                <h5>{userLSd.name} {userLSd.family} </h5>
                                 <p>16 هزار دنبال کننده</p>
                         </div>
                         <div className={styles.minicard}>

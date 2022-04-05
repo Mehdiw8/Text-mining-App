@@ -19,7 +19,7 @@ const Summary = () => {
         const [wrongNum,setWrongNum] = useState(150)
         const [textH,setTextH] = useState(false)
         const [error,setError] = useState(false)
-        let baseUrl = "http://api.text-mining.ir/api/"
+        let baseUrl = "https://api.text-mining.ir/api/"
         const clickHandler = ()=>{
                 if(inputValue.length>0){
                         setTextH(true)

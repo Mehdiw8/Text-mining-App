@@ -6,7 +6,7 @@ import Summary from './Summary'
 import TextAnalysis from './TextAnalysis'
 import Typos from './Typos'
 import {contextL} from '../Context/Context'
-const PanelContent = () => {
+const PanelContent = ({userLSd}) => {
         const linkW = useContext(contextL)
         const urlW=window.location.href
         const [mainPage,setMainPage]=useState(false)
@@ -20,14 +20,14 @@ const PanelContent = () => {
         },[urlW])
         return (
                 <>    
-                        {(treu || mainPage) && <Dashbord/> }
+                        {(treu || mainPage) && <Dashbord userLSd={userLSd} /> }
                         
                         {/* test */}
                         {treu1 && <TextAnalysis/> }
                         {treu2 && <SpellC/> }
                         {treu3 && <Typos/> }
                         {treu4 && <Summary/> }
-                        {treu5 && <Profile/> }
+                        {treu5 && <Profile userLSd={userLSd} /> }
                 </>
         );
 };

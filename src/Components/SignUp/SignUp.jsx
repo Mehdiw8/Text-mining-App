@@ -6,8 +6,12 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {notify} from  '../helperJs/reactTostify'
 import useTitle from '../../Customhooks/useTitle';
+import DataContextLS from '../Context/DataContextLS'
+
+
 const SignUp = () => {
         useTitle('ثبت نام / ورود')
+       const[ users,setUsers]= useState([])
         const[data,setDate]=useState({
               name:'',
               family:'',
@@ -16,6 +20,7 @@ const SignUp = () => {
               confirmPassword:'',
               isAccepted:false,  
         })
+        
         const[error,setErrors] = useState({})
         const [focus,setFocus] = useState({})
         const [checkC,setCheckC]= useState(false)
@@ -30,8 +35,9 @@ const SignUp = () => {
                 }
                 scrollDown()
                 
+                
         },[data])
-
+        //inja data bod bra update
         const changeHandler = (e) =>{
                 if(e.target.name === 'isAccepted'){
                         setDate({...data,[e.target.name]:e.target.checked})
@@ -52,16 +58,32 @@ const SignUp = () => {
         const submitHandler = (e)=>{
                 e.preventDefault()
                 if(!Object.keys(error).length){
+                       
                         notify('درخواست شما با موفقیت انجام شد','success')
+                          ////////////////////////////////////////////////////////////////
+                       const emails = getEmailFromLS()
+                       emails.push(data.email)
+                       const uniqEmails = [...new Set(emails)]
+                       console.log(uniqEmails)
+                       localStorage.setItem('emails',JSON.stringify(uniqEmails))
+                         ////////////////////////////////////////////////////////////////
+                       const users =  addUserToLs()
+                       users.push(data)
+                     
+                       localStorage.setItem('user',JSON.stringify(users))
+                       console.log(users)
+                         ////////////////////////////////////////////////////////////////
                         setTimeout(() => {
-                                navi("/Login")
+                                navi("/success")
                         }, 200);
                 }
              
                 else{
-                       
-                                
-                       
+                     
+                        // setUsers([
+                        //         ...users,data
+                        // ])
+                      
                         setFocus({
                                 name:true,
                                 family:true,
@@ -73,9 +95,30 @@ const SignUp = () => {
                         notify('لطفا موارد خواسته شده را تکمیل کنید !','error')
                 }
         }
+       
+        const addUserToLs =() => {
+                  let users;
+                  let getFromLS = localStorage.getItem('user')
+                  if (getFromLS === null) {
+                        users=[]
+                  } else {
+                        users = JSON.parse(getFromLS)
+                  }
+                  return users
+        }
+        const getEmailFromLS = () => {
+                let emails;
+                let getFromLS = localStorage.getItem('emails')
+                if (getFromLS === null) {
+                        emails=[]
+                } else {
+                        emails = JSON.parse(getFromLS)
+                }
+                return emails
+        }
  
         return (
-
+<>
                 <div className={styles.formWrapper}>
                         <div id="ScrollHere1" name="ScrollHere1"></div>
                    <form onSubmit={submitHandler} className={styles.forms}>
@@ -139,6 +182,9 @@ const SignUp = () => {
                    </form>
                    <ToastContainer  rtl />
                 </div>
+                
+
+                </>
         );
 };
 

@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme)=>({
         }
    
 }));
-const Dashbord = () => {
+const Dashbord = ({userLSd}) => {
         const classes = useStyles()
         return (<>
         <section className={classes.wrapper}>
@@ -108,7 +108,7 @@ const Dashbord = () => {
                       <section className={classes.tableAndUser}>
                         <div className={classes.user}>
                                 <Typography className={classes.headtableAndUser} variant="h5" >درآمد کلی</Typography>
-                        <UserCard />
+                        <UserCard userLSd={userLSd} />
                                 </div>
                         <div className={classes.tableW}>
                         <Typography className={classes.headtableAndUser} variant="h5" >نمودار بازدیدهای اخیر</Typography>

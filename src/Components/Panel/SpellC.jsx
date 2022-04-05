@@ -32,7 +32,7 @@ const SpellC = () => {
         const [checkedOne,setCheckedOne] = useState(true)
         const [checkedTwo,setCheckedTwo] = useState(true)
         const [suggesWord,setSuggesword] = useState(3)
-        let baseUrl = "http://api.text-mining.ir/api/"
+        let baseUrl = "https://api.text-mining.ir/api/"
         const clickHandler = ()=>{
                 if(inputValue.length>0){
                         setTextH(true)
@@ -250,7 +250,7 @@ return (
                                         </React.Fragment>
                                 }>
                                         <span> {item.OriginalText === item.NewText ?
-                                                <span>{item.OriginalText}</span>
+                                                <span className={classes.responseText}>{item.OriginalText}</span>
                                         : 
                                         <span className={classes.orginalColor}>{item.OriginalText}</span>
                                         

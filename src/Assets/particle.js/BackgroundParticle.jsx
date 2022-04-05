@@ -69,18 +69,22 @@ const BackgroundParticle = () => {
                         <div className={styles.sabtWrapper}>
                                <p>جهت استفاده از خدمات متن کاوی ابتدا ثبت نام کنید</p>
                             <div className={styles.btnWrpper}>
-                            <button>
+                            
                                
-                               <Link to="/panel">ثبت نام</Link>
-                           </button>
+                               <Link to="/SignUp">
+                               <button>
+                                       
+                                       ثبت نام
+                                       </button></Link>
+                           
                                 <div className={styles.btnWrpper}>
                                         <p>قبلا ثبت نام کرده‌ام</p>
+                                        <Link to="/Login" >
                                 <button>
-                                        <Link to="/panel" >
                                         ورود
-                                        </Link>
-                                
+                                    
                                 </button>
+                                </Link>
                                 </div>
                             </div>
                                 
