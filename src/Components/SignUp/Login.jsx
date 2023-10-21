@@ -47,10 +47,8 @@ const Login = () => {
                
                 if(!Object.keys(error).length){
                        if(userDetails !== null){
-                        console.log(userDetails);
                         userDetails.map((userDetail) => {
                                 if(data.email === userDetail.email && data.password === userDetail.password){
-                                        console.log(userDetail)
                                         setuserD(userDetail)
                                       //  localStorage.setItem('userdetail',JSON.stringify(userDetail))
                                       localStorage.setItem('userDetail', JSON.stringify(userDetail));

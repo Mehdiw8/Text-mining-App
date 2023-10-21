@@ -24,7 +24,6 @@ const Changeprofile = ({userLSd}) => {
         setData({
             ...data,[e.target.name]:e.target.value
         })
-        console.log(data)
     }
     const focusHandler= (e)=>{
         e.preventDefault();
@@ -44,18 +43,15 @@ const submitHandler =(e)=>{
                 name: data.name,
                 password: userLSd.password,
       }
-         console.log(newUSerDetail);
             //localStorage.setItem('userDetail',JSON.stringify(newUSerDetail))
             const users =  addUserToLs()
             users.push(newUSerDetail)
           
             localStorage.setItem('user',JSON.stringify(users))
-            console.log(users)
            
     }
  
     else{
-        console.log('first')
             setFocus({
                     name:true,
                     family:true,

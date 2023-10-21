@@ -6,7 +6,6 @@ const ChangePass = ({userLSd}) => {
         newpass:'',
         newpassCheck:''
     }); 
-    console.log(userLSd);
     const changeHandler =(e)=>{
         setPasswords({
             ...passwords , [e.target.name]:e.target.value
@@ -14,7 +13,6 @@ const ChangePass = ({userLSd}) => {
     }
     const submitHandler =(e)=>{
         e.preventDefault()
-        console.log(passwords);
     }
         return (
                 <>

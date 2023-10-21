@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme)=>({
 const Panel = () => {
        
        const userLSd = JSON.parse(localStorage.getItem('userDetail'))
-        console.log(userLSd)
         useTitle('داشبورد')
         const classes = useStyles()
         const[humber,setHumber]=useState(false)

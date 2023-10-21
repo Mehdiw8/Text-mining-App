@@ -64,14 +64,12 @@ const SignUp = () => {
                        const emails = getEmailFromLS()
                        emails.push(data.email)
                        const uniqEmails = [...new Set(emails)]
-                       console.log(uniqEmails)
                        localStorage.setItem('emails',JSON.stringify(uniqEmails))
                          ////////////////////////////////////////////////////////////////
                        const users =  addUserToLs()
                        users.push(data)
                      
                        localStorage.setItem('user',JSON.stringify(users))
-                       console.log(users)
                          ////////////////////////////////////////////////////////////////
                         setTimeout(() => {
                                 navi("/success")
